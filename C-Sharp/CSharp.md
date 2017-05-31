@@ -7,10 +7,11 @@ tags: C#学习笔记
 ---
 <!--more-->
 ## C#关键字
-<center>
+
 ![C#关键字](http://o9kzgz0kz.bkt.clouddn.com/C%23%E5%85%B3%E9%94%AE%E5%AD%97.jpg)
+
 ![C#关键字_上下文](http://o9kzgz0kz.bkt.clouddn.com/C%23%E5%85%B3%E9%94%AE%E5%AD%97_%E4%B8%8A%E4%B8%8B%E6%96%87.jpg)
-</center>
+
 
 >
 `abstract `

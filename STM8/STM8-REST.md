@@ -6,7 +6,9 @@ categories: STM8
 tags: STM8
 ---
 一款芯片，复位的重要性我认为不亚于其他任何一个单元模块。同时，开发固件时，对芯片的复位条件、复位源、复位后的系统状态的掌握直接决定后面系统工作的可靠性。
-<center><img src="http://obd6jz6in.bkt.clouddn.com/%E5%A4%8D%E4%BD%8D.jpg"></center>
+
+![](http://obd6jz6in.bkt.clouddn.com/%E5%A4%8D%E4%BD%8D.jpg)
+
 ### 复位源
 STM8复位源总共是6类，除了外部复位管脚提供的两种复位源(`NRST`和`SWIM REST`)，还有上下电(`POR\PDR`)复位、独立看门狗(`IWDG`)复位、窗口看门狗(`WWDG`)复位、非法配置选项复位(`ILLOP`)。STM8的用户指南里对各个部分的外设的复位状态有明确的说明，例如大部分IO口复位之后都是浮动输入模式，但也有少数例外，使用时应该时刻注意复位状态对系统可能的影响。
 

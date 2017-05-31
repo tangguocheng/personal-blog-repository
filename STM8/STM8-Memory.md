@@ -6,7 +6,9 @@ categories: STM8
 tags: STM8
 ---
 以低密度flash内存分配为例(高密度和中等密度只是内存分配及大小不同)，下图是内存映射图。
-<center><img src="http://obd6jz6in.bkt.clouddn.com/STM8%E4%BD%8E%E5%AF%86%E5%BA%A6Flash.jpg"></center>
+
+![](http://obd6jz6in.bkt.clouddn.com/STM8%E4%BD%8E%E5%AF%86%E5%BA%A6Flash.jpg)
+
 和51单片机一样，STM8也是8位机16位地址总线宽度，设计最大寻址范围也是64Kb，每页128字节，IAP操作以页为单位。整个FLASH被分为数据EEPROM(`DATA EEPROM`)、配置选项(`OPTION BYTES`)、代码区(`CODE FLASH`)。
 
 ### 数据EEPROM(`DATA EEPROM`)

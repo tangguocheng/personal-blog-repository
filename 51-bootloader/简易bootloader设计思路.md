@@ -16,7 +16,7 @@ tags: 嵌入式 单片机
 
 对于51单片机，最大支持64Kb的程序代码，其中包括中断向量、启动代码、用户代码、bootloader代码，因此需要合理分配flash空间。对于vango的V98xx系列单片机，程序存储区地址映射如下图:
 
-<center>![v9821_FLASH](http://o9kzgz0kz.bkt.clouddn.com/V9811_FLASH.jpg)</center>
+![v9821_FLASH](http://o9kzgz0kz.bkt.clouddn.com/V9811_FLASH.jpg)
 
 Flash存储器的**008000h--01FFFFh**的内容根据代码段选择寄存器`CBANK,SFR 0xA0`的配置，以32KB为单位，选择行的映射到程序存储器**0x8000-0xFFFF**区域。其中`common area`为公共代码区，使用时不需要切换`Code Bank`，默认代码段为`Bank1`。
 

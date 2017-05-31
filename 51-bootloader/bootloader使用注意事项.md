@@ -6,7 +6,7 @@ categories: bootloader
 tags: 嵌入式 单片机
 ---
 ## keil 链接选项
-<center>![keil config](http://o9kzgz0kz.bkt.clouddn.com/kei%E8%AE%BE%E7%BD%AE.jpg)</center>
+![keil config](http://o9kzgz0kz.bkt.clouddn.com/kei%E8%AE%BE%E7%BD%AE.jpg)
 <!--more-->
 
 ```C

@@ -6,7 +6,8 @@ categories: STM8
 tags: STM8
 ---
 ## STM8时钟结构(clock structure)
-<center>![STM8时钟结构](http://obd6jz6in.bkt.clouddn.com/STM8%E6%97%B6%E9%92%9F%E7%BB%93%E6%9E%84.jpg)</center>
+
+![STM8时钟结构](http://obd6jz6in.bkt.clouddn.com/STM8%E6%97%B6%E9%92%9F%E7%BB%93%E6%9E%84.jpg)
 
 ## 时钟分类
 STM的时钟设计同时兼顾系统的鲁棒性及低功耗，共提供四类时钟,分别为高速外部时钟`HSE`、高速内部时钟`HSI`、低速内部时钟`LSI`、低速外部时钟`LSE`。
@@ -34,6 +35,7 @@ STM的时钟设计同时兼顾系统的鲁棒性及低功耗，共提供四类�
 
 ## 时钟中断
 时钟控制器可以在一定条件下产生如下中断和事件
-<center>![时钟中断](http://obd6jz6in.bkt.clouddn.com/%E6%97%B6%E9%92%9F%E4%B8%AD%E6%96%AD.jpg)</center>
+
+![时钟中断](http://obd6jz6in.bkt.clouddn.com/%E6%97%B6%E9%92%9F%E4%B8%AD%E6%96%AD.jpg)
 
 *以上只是简单的概要，详细细节见* **[STM8L 用户指南](http://obd6jz6in.bkt.clouddn.com/STM8L%20%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf)** 

@@ -8,7 +8,7 @@ tags: C# 上位机 串口
 bootloader写完之后，使用C#写了一个配套的升级助手。不得不说C#真的是一个很优秀的语言，而**visual studio**也完全可以称之为最强IDE，没有之一！配合[MSDN](https://msdn.microsoft.com/zh-cn/dn308572.aspx)，花了一个星期熟悉C#,然后两周不到完成了51升级助手的开发。
 
 ## 主界面
-<center>![51升级助手](http://o9kzgz0kz.bkt.clouddn.com/51bootloader.jpg)</center>
+![51升级助手](http://o9kzgz0kz.bkt.clouddn.com/51bootloader.jpg)
 
 > 特点:
 1. 支持多种不同的通信协议（主要用于升级前的握手）
