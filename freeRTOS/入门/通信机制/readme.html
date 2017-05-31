@@ -1,0 +1,663 @@
+
+<!DOCTYPE HTML>
+<html lang="Chinese" >
+    <head>
+        <title>通信机制 · freeRTOS中文文档</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="author" content="tangguocheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prismx/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="队列.html" />
+    
+    
+    <link rel="prev" href="../任务和协程/协程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.xn--4gqa63c686ta68iba.ren/" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../简介/freeRTOS介绍.html">
+            
+                <a href="../../简介/freeRTOS介绍.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../简介/编码规则和风格.html">
+            
+                <a href="../../简介/编码规则和风格.html">
+            
+                    
+                    编码规则和风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../简介/许可.html">
+            
+                <a href="../../简介/许可.html">
+            
+                    
+                    许可
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../简介/快速开始指南.html">
+            
+                <a href="../../简介/快速开始指南.html">
+            
+                    
+                    快速开始指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../任务和协程/readme.html">
+            
+                <a href="../任务和协程/readme.html">
+            
+                    
+                    任务和协程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../任务和协程/任务.html">
+            
+                <a href="../任务和协程/任务.html">
+            
+                    
+                    任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../任务和协程/协程.html">
+            
+                <a href="../任务和协程/协程.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    通信机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="队列.html">
+            
+                <a href="队列.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="二值信号量.html">
+            
+                <a href="二值信号量.html">
+            
+                    
+                    二值信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="计数信号量.html">
+            
+                <a href="计数信号量.html">
+            
+                    
+                    计数信号量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="互斥量.html">
+            
+                <a href="互斥量.html">
+            
+                    
+                    互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="递归互斥量.html">
+            
+                <a href="递归互斥量.html">
+            
+                    
+                    递归互斥量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="任务通知.html">
+            
+                <a href="任务通知.html">
+            
+                    
+                    任务通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../事件组/事件组.html">
+            
+                <a href="../事件组/事件组.html">
+            
+                    
+                    事件组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../软件定时器/软件定时器.html">
+            
+                <a href="../软件定时器/软件定时器.html">
+            
+                    
+                    软件定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../进阶/readme.md">
+            
+                <span>
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../进阶/源代码组织结构/源代码组织结构.html">
+            
+                <a href="../../进阶/源代码组织结构/源代码组织结构.html">
+            
+                    
+                    源代码组织结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../进阶/高级/配置文件.html">
+            
+                <a href="../../进阶/高级/配置文件.html">
+            
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../进阶/高级/跟踪特性.html">
+            
+                <a href="../../进阶/高级/跟踪特性.html">
+            
+                    
+                    跟踪特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../进阶/高级/低功耗支持.html">
+            
+                <a href="../../进阶/高级/低功耗支持.html">
+            
+                    
+                    低功耗支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../进阶/高级/运行时间统计.html">
+            
+                <a href="../../进阶/高级/运行时间统计.html">
+            
+                    
+                    运行时间统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../进阶/高级/队列集合.html">
+            
+                <a href="../../进阶/高级/队列集合.html">
+            
+                    
+                    队列集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../进阶/高级/中断延迟.html">
+            
+                <a href="../../进阶/高级/中断延迟.html">
+            
+                    
+                    中断延迟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../进阶/高级/静态分配与动态分配.html">
+            
+                <a href="../../进阶/高级/静态分配与动态分配.html">
+            
+                    
+                    静态和动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../进阶/高级/内存管理.html">
+            
+                <a href="../../进阶/高级/内存管理.html">
+            
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../进阶/高级/栈溢出检测.html">
+            
+                <a href="../../进阶/高级/栈溢出检测.html">
+            
+                    
+                    栈溢出检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../进阶/高级/钩子函数.html">
+            
+                <a href="../../进阶/高级/钩子函数.html">
+            
+                    
+                    钩子函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../进阶/高级/线程本地存储.html">
+            
+                <a href="../../进阶/高级/线程本地存储.html">
+            
+                    
+                    线程本地存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../进阶/高级/移植指南.html">
+            
+                <a href="../../进阶/高级/移植指南.html">
+            
+                    
+                    移植指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../进阶/高级">
+            
+                <span>
+            
+                    
+                    在windows上模拟
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >通信机制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>freeRTOS&#x4F7F;&#x7528;&#x961F;&#x5217;&#x3001;&#x4FE1;&#x53F7;&#x91CF;&#x3001;&#x4E92;&#x65A5;&#x91CF;&#x3001;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x95F4;&#x6570;&#x636E;&#x5171;&#x4EAB;&#x548C;&#x901A;&#x4FE1;&#x3002;&#x5176;&#x4E2D;&#x4EFB;&#x52A1;&#x901A;&#x77E5;&#x662F;<code>8.2.0</code>&#x7248;&#x672C;&#x65B0;&#x589E;&#x52A0;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../任务和协程/协程.html" class="navigation navigation-prev " aria-label="Previous page: 协程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="队列.html" class="navigation navigation-next " aria-label="Next page: 队列">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"通信机制","level":"1.3.2","depth":2,"next":{"title":"队列","level":"1.3.2.1","depth":3,"path":"入门/通信机制/队列.md","ref":"入门/通信机制/队列.md","articles":[]},"previous":{"title":"协程","level":"1.3.1.2","depth":3,"path":"入门/任务和协程/协程.md","ref":"入门/任务和协程/协程.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prismx","-highlight","-search","duoshuo","ga","theme-comscore"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-80700049-1"},"duoshuo":{"short_name":"tangguocheng","theme":"default"},"prismx":{"css":["prismjs/themes/prism-tomorrow.css"]},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"mobi":{"fontSize":12,"footerTemplate":null,"headerTemplate":null,"margin":{"bottom":36,"left":62,"right":62,"top":36},"pageNumbers":false,"paperSize":"a4"},"theme":"default","author":"tangguocheng","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"freeRTOS中文文档","language":"Chinese","links":{"sidebar":{"博客":"http://www.xn--4gqa63c686ta68iba.ren/"}},"gitbook":"*","description":"freeRTOS中文文档","extension":null},"file":{"path":"入门/通信机制/readme.md","mtime":"2016-08-29T00:47:32.770Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-18T09:07:11.640Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-duoshuo/duoshuo.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
